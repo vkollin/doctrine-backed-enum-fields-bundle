@@ -9,7 +9,7 @@ use VKollin\Doctrine\BackedEnumFields\EventListener\EnumTypeListener;
 /**
  * @codeCoverageIgnore
  */
-final class DoctrineNativeEnumsExtension extends Extension
+final class DoctrineBackedEnumFieldsExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container): void
     {
