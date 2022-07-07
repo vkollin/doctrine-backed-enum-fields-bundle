@@ -1,0 +1,32 @@
+{
+  "name": "vkollin/doctrine-backed-enum-fields-bundle",
+  "description": "Provides truly support for backed enums in doctrine by generating enum fields, not string fields.",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "VKollin\\Doctrine\\BackedEnumFields\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "VKollin\\Doctrine\\BackedEnumFields\\Tests\\": "tests/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Vincent Kollin",
+      "email": "vkollin@gmail.com"
+    },
+    {
+      "name": "Beno!t POLASZEK",
+      "email": "bpolaszek@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=8.1",
+    "doctrine/dbal": "^2.13 >=2.13.5 || ~3.1"
+  },
+  "require-dev": {
+  }
+}
