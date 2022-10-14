@@ -8,9 +8,6 @@ use Doctrine\DBAL\Types\Type;
 use InvalidArgumentException;
 use LogicException;
 use ReflectionEnum;
-use function get_debug_type;
-use function is_a;
-use function sprintf;
 
 final class NativeEnum extends Type
 {
@@ -100,7 +97,7 @@ final class NativeEnum extends Type
     /**
      * @codeCoverageIgnore
      */
-    public function requiresSQLCommentHint(AbstractPlatform $platform)
+    public function requiresSQLCommentHint(AbstractPlatform $platform): bool
     {
         return true;
     }
