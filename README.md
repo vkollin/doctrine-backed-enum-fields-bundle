@@ -73,6 +73,19 @@ final class Book
 }
 ```
 
+### Enums in your key
+
+You need to use a custom id generator to use enums as your key. It is also required to set the GeneratedValue strategy to CUSTOM.
+Otherwise the custom id generator will not be used. Nothing will be generated here though.
+
+```php
+#[ORM\Column(name: 'type', type: StatusEnum::class, nullable: false)]
+#[ORM\GeneratedValue(strategy: 'CUSTOM')]
+#[ORM\CustomIdGenerator(EnumIdGenerator::class)]
+#[ORM\Id]
+private StatusEnum $status,
+```
+
 ### In other projects using Doctrine
 
 ```php
