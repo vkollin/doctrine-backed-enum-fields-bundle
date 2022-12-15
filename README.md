@@ -86,6 +86,14 @@ Otherwise the custom id generator will not be used. Nothing will be generated he
 private StatusEnum $status,
 ```
 
+Then you also need to tag the custom id generator as a doctrine id_generator in your services.yaml
+
+```yaml
+    VKollin\Doctrine\BackedEnumFields\IdGenerator\EnumIdGenerator:
+        class: VKollin\Doctrine\BackedEnumFields\IdGenerator\EnumIdGenerator
+        tags: [ 'doctrine.id_generator' ]
+```
+
 ### In other projects using Doctrine
 
 ```php
