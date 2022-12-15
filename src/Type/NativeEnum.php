@@ -47,12 +47,12 @@ final class NativeEnum extends Type
     public function getName(): string
     {
         return $this->name ?? throw new LogicException(
-                sprintf(
-                    'Class `%s` cannot be used as primary type; register your own types with %s::registerEnumType() instead.',
-                    __CLASS__,
-                    __CLASS__,
-                )
-            );
+            sprintf(
+                'Class `%s` cannot be used as primary type; register your own types with %s::registerEnumType() instead.',
+                __CLASS__,
+                __CLASS__,
+            )
+        );
     }
 
     /**
@@ -65,9 +65,11 @@ final class NativeEnum extends Type
         }
 
         if (!$enum instanceof BackedEnum) {
-            throw new InvalidArgumentException(
-                sprintf('Expected instance of BackedEnum, got `%s`.', get_debug_type($enum))
-            );
+            $class = $this->class;
+            if (false === enum_exists($class, true)) {
+                throw new LogicException("This class should be an enum: $class");
+            }
+            return $class::from($enum)->value;
         }
 
         return $enum->value;
