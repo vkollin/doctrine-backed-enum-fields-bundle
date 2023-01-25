@@ -64,6 +64,10 @@ final class NativeEnum extends Type
             return null;
         }
 
+        if (is_string($enum) || is_int($enum)) {
+            return $enum;
+        }
+
         if (!$enum instanceof BackedEnum) {
             $class = $this->class;
             if (false === enum_exists($class, true)) {
