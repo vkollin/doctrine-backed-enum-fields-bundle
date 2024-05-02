@@ -25,8 +25,12 @@
   ],
   "require": {
     "php": ">=8.1",
-    "doctrine/dbal": "^2.13 >=2.13.5 || ~3.1 || ^4.0"
+    "doctrine/dbal": "^4.0",
+    "doctrine/orm": "^3.0"
   },
   "require-dev": {
+    "symfony/config": "~6.0 || ^7.0",
+    "symfony/dependency-injection": "~6.0 || ^7.0",
+    "symfony/http-kernel": "~6.0 || ^7.0"
   }
 }
