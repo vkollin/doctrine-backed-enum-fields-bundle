@@ -23,7 +23,7 @@ class EnumIdGenerator extends AssignedGenerator
      *
      * @throws EntityMissingAssignedId
      */
-    public function generateId(EntityManagerInterface $em, $entity)
+    public function generateId(EntityManagerInterface $em, $entity): array
     {
         $identifier = parent::generateId($em, $entity);
 
